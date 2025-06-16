@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Wordle</title>
+    <link rel="icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Eo_circle_light-green_letter-w.svg/1200px-Eo_circle_light-green_letter-w.svg.png"
+        type="image/x-icon" />
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            font-family: Arial, sans-serif;
+            background-size: cover;
+        }
+
+        .row {
+            margin: 5px 0;
+
+        }
+
+        .letter {
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 3px;
+            border: 2px solid #888;
+            transition: background-color 0.3s, transform 0.2s;
+            background-color: white;
+        }
+
+        .green {
+            background-color: #6aaa64;
+            color: white;
+            border-color: #6aaa64;
+            transform: scale(1.1);
+        }
+
+        .yellow {
+            background-color: #c9b458;
+            color: white;
+            border-color: #c9b458;
+            transform: scale(1.1);
+        }
+
+        .red {
+            background-color: #787c7e;
+            color: white;
+            border-color: #787c7e;
+            transform: scale(1.1);
+        }
+
+        button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            /* Кольорова гама */
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #27ae60, #219653);
+            box-shadow: 0 6px 8px rgba(39, 174, 96, 0.3);
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            font-weight: bold;
+            font-size: 40px;
+            color: #00ff00;
+            text-shadow:
+
+
+
+                0 0 40px #00ff00;
+        }
+
+
+
+        #message {
+            margin-top: 10px;
+            min-height: 24px;
+            font-weight: bold;
+        }
+
+        #languageSelector {
+            margin-bottom: 15px;
+            font-size: 18px;
+
+        }
+
+        #languageSelector {
+            padding: 8px 14px;
+            font-size: 16px;
+            border-radius: 12px;
+            border: 2px solid #4caf50;
+            /* зеленый акцент */
+            background-color: #e8f5e9;
+            /* светло-зеленый фон */
+            color: #2e7d32;
+            font-weight: 600;
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+            appearance: none;
+            /* убрать стандартный стиль */
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%232e7d32" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+
+        #languageSelector:hover,
+        #languageSelector:focus {
+            border-color: #388e3c;
+            box-shadow: 0 0 8px #66bb6a;
+        }
+
+        /* для поддержки в Firefox */
+        #languageSelector:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #2e7d32;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="title">Wordle</h2>
+
+    <select id="languageSelector" aria-label="Выбор языка">
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="ua">Українська</option>
+        <option value="pl">Polski</option>
+        <option value="es">Español</option>
+
+
+
+    </select>
+
+    <div id="board"></div>
+    <div>
+        <button id="checkBtn">Check</button>
+        <button id="restartBtn" style="display: none;">Restart</button>
+    </div>
+    <div id="message"></div>
+
+    <script src="/script.js">
+
+
+
+    </script>
+</body>
+
+</html>
